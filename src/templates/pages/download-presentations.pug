@@ -1,0 +1,15 @@
+extends ../layout.pug
+
+block styles
+    link(rel="stylesheet" href="styles/download-presentations.min.css")
+
+block content
+    include ../components/download/jumbotron
+    section.main-inner
+        include ../components/download/navigation
+        section.content-inner.content-inner_download
+            include ../components/download/filters
+            include ../components/download/content-presentations
+
+block scripts
+    script(src="scripts/download/download.js")

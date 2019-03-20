@@ -1,0 +1,16 @@
+extends ../layout.pug
+
+block styles
+    link(rel="stylesheet" href="styles/about.min.css")
+    script(src='scripts/libs.min.js')
+    script(src='scripts/about/about-script.js')
+block content
+    include ../components/about/navigation
+    include ../components/about/who-we-are
+    include ../components/about/progress-in-numbers
+    include ../components/about/historical-note
+    include ../components/about/what-we-do
+    include ../components/about/what-purpose
+    include ../components/about/how-work
+    include ../components/about/why-progress
+    include ../components/about/subscription

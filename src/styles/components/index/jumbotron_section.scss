@@ -1,0 +1,191 @@
+@import "../../sizes";
+@import "../../colors";
+@import "../../templates";
+
+.jumbotron-section {
+  height: $size_jumbotron_section_height;
+  position: relative;
+  overflow: hidden;
+
+  .jumbotron-section__content {
+    height: 100%;
+    position: relative;
+
+    .jumbotron-section__block {
+      height: $size_jumbotron_section_height;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: $size_jumbotron_section_block_padding;
+      width: 100%;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+
+      .jumbotron-section__caption {
+        margin: 0;
+        color: $color_jumbotron_section_text;
+        display: block;
+        width: 60%;
+        font-size: 24px;
+        line-height: 32px;
+        transform: translateY(300px);
+        @include simpleTransitionDelayTime(.9s, 900ms);
+      }
+
+      .jumbotron-section__text {
+        width: 70%;
+        display: block;
+        color: $color_jumbotron_section_text;
+        opacity: 0.9;
+        transform: translateY(298px);
+        @include simpleTransitionDelayTime(.9s, 900ms);
+      }
+
+      &.slick-active {
+        .jumbotron-section__caption,
+        .jumbotron-section__text {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  .slick-slider {
+    .slick-arrow {
+      display: none !important;
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    width: calc(100% - 110px);
+    height: 4px;
+    background: $color_slider_bg;
+    bottom: 30px;
+    left: 55px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    li {
+      float: left;
+      width: 0;
+      height: 5px;
+      background: $color_slider_run;
+      button {
+        display: none;
+      }
+      &.slick-active {
+        width: 100%;
+        animation: ProgressDots 11s both;
+      }
+    }
+  }
+
+}
+
+@include desktop {
+
+  .jumbotron-section {
+    height: 720px;
+
+    .jumbotron-section__content {
+      .jumbotron-section__slider {
+        .jumbotron-section__block {
+          padding: $size_jumbotron_section_block_padding_desktop;
+          height: 720px;
+
+          .jumbotron-section__caption {
+            font-size: 36px;
+            line-height: 48px;
+          }
+
+          .jumbotron-section__text {
+            font-size: 18px;
+            line-height: 28px;
+          }
+
+          &.slick-active {
+            .jumbotron-section__caption,
+            .jumbotron-section__text {
+              transform: translateY(-30px);
+            }
+          }
+        }
+      }
+    }
+
+    .slick-dots {
+      bottom: 50px;
+    }
+  }
+
+}
+
+@include tablet {
+
+  .jumbotron-section {
+    height: 310px;
+
+    .jumbotron-section__content {
+      .jumbotron-section__slider {
+        .jumbotron-section__block {
+          height: 310px;
+          padding-left: 17px;
+          padding-right: 17px;
+
+          .jumbotron-section__caption {
+            width: 80%;
+          }
+
+          .jumbotron-section__text {
+            display: none;
+          }
+        }
+      }
+
+    }
+
+    .slick-dots {
+      left: 17px;
+      bottom: 17px;
+      width: calc(100% - 34px);
+    }
+
+  }
+
+}
+
+@include mobile {
+
+  .jumbotron-section {
+    height: 210px;
+
+    .jumbotron-section__content {
+      .jumbotron-section__slider {
+        .jumbotron-section__block {
+          height: 210px;
+
+
+          .jumbotron-section__caption {
+            width: 100%;
+            font-size: 20px;
+            line-height: 24px;
+          }
+
+        }
+      }
+
+    }
+  }
+
+}
+
+@keyframes ProgressDots {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

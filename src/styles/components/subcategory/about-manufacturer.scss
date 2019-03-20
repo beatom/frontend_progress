@@ -1,0 +1,218 @@
+@import "../../colors";
+@import "../../sizes";
+@import "../../templates";
+@import "../../screens";
+
+.about-manufacturer {
+  background: $color_solution_section_item_background;
+  padding: 0 55px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .about-manufacturer {
+    &__logo--bg {
+      position: absolute;
+      background-position: right bottom;
+      width: calc(100% + 50px);
+      height:calc(100% + 10px);
+      background-repeat: no-repeat;
+      opacity: 0.2;
+      background-size: 50%;
+      right: -50px;
+      bottom: -10px;
+    }
+    &__caption {
+      position: relative;
+      &-wrapper {
+        display: flex;
+        align-items: center;
+        margin-top: 45px;
+        margin-bottom: 5px;
+      }
+      &__title {
+        font-size: 32px;
+        line-height: 40px;
+        font-weight: 700;
+        color: $color_solutions-industries-title;
+        margin: 0;
+        &__green-band {
+          width: 112px;
+          height: 4px;
+          background: $color_products_item_color-hover;
+          margin-right: 30px;
+        }
+      }
+    }
+    &__info {
+      display: flex;
+      position: relative;
+      justify-content: space-around;
+      &__description {
+        display: flex;
+        flex-direction: column;
+        flex: 50%;
+        &__info {
+          font-size: 14px;
+          line-height: 20px;
+          color: $color_solutions-industries-title;
+          margin-top: 30px;
+          margin-bottom: 25px;
+        }
+        &__link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 11px 20px;
+          text-transform: uppercase;
+          color: $color_category-items-button-color;
+          background: $color_solutions-industries-title-accent;
+          border: 2px solid $color_solutions-industries-title-accent;
+          border-radius: 20px;
+          font-size: 13px;
+          font-weight: 600;
+          text-decoration: none;
+          margin: 0 0 55px 0;
+          transition: all 0.3s ease;
+          &:hover, &:focus {
+            outline: none;
+            background: $color_category-items_links_item_position;
+            color: $color_category-items-button_hover;
+          }
+          &--wrapper {
+            display: flex;
+          }
+        }
+      }
+      &__logo {
+        padding: 0 20px;
+        height: 160px;
+        display: flex;
+        align-items: center;
+        &__avatar {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include adapt_to('wide_screen') {
+  .about-manufacturer {
+    padding: 0 160px;
+    .about-manufacturer {
+      &__caption {
+        &-wrapper {
+          margin-top: 70px;
+        }
+        &__title {
+          font-size: 48px;
+          line-height: 60px;
+          &__green-band {
+            width: 160px;
+            margin-right: 80px;
+          }
+        }
+      }
+      &__info {
+        &__description {
+          &__info {
+            font-size: 16px;
+            line-height: 24px;
+            width: 60%;
+            margin-top: 85px;
+            margin-bottom: 55px;
+          }
+          &__link {
+            padding: 17px 40px;
+            border-radius: 50px;
+            font-size: 16px;
+            margin-bottom: 100px;
+          }
+        }
+        &__logo {
+          height: 400px;
+          &__avatar {
+            height: 255px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include adapt_to("tablet") {
+  .about-manufacturer {
+    padding: 0 15px;
+    overflow: hidden;
+    .about-manufacturer {
+      &__caption {
+        &-wrapper {
+          margin-top: 35px;
+        }
+        &__title {
+          font-size: 24px;
+          line-height: 32px;
+          &__green-band {
+            width: 128px;
+            height: 2px;
+          }
+        }
+      }
+      &__info {
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        &__logo {
+          margin: 20px auto 0;
+        }
+        &__description{
+          flex: auto;
+          &__link {
+            margin: 0 auto 40px 0;
+          }
+        }
+      }
+      &__logo {
+        &--bg {
+          background-size: 100%;
+          opacity: .1;
+          background-position: top center;
+          bottom: 0;
+          width: 100%;
+          height:calc(100% + 20px );
+        }
+      }
+    }
+  }
+}
+
+@include adapt_to('phone') {
+  .about-manufacturer {
+    .about-manufacturer {
+      &__caption {
+        &-wrapper {
+          margin-top: 20px;
+        }
+        &__title {
+          font-size: 16px;
+          line-height: 24px;
+          &__green-band {
+            width: 48px;
+            margin-right: 15px;
+          }
+        }
+      }
+      &__info__description {
+        &__info {
+          font-size: 13px;
+          line-height: 16px;
+        }
+        &__link {
+          width: 100%;
+          margin-bottom: 25px;
+          padding: 9px 20px;
+        }
+      }
+    }
+  }
+}

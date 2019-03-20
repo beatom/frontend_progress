@@ -1,0 +1,15 @@
+extends ../layout.pug
+
+block styles
+    link(rel="stylesheet" href="styles/participate.min.css")
+    script(src='scripts/libs.min.js')
+    script(src='scripts/production/jquery.mCustomScrollbar.min.js')
+    script(src='scripts/participate/participate-items.js')
+    script(src='scripts/solutions/solutions-dropdown.js')
+
+block content
+    include ../components/participate/navigation
+    include ../components/participate/contacts
+    include ../components/participate/vacancy
+    include ../components/participate/vacancy-open
+    include ../components/participate/question

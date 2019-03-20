@@ -1,0 +1,264 @@
+@import "../../sizes";
+@import "../../screens";
+@import "../../colors";
+@import "../../templates";
+
+.progress-in-numbers {
+  background: $color_progress_in_numbers_background;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0 40px;
+  .progress-in-numbers__list {
+    padding: 0;
+    margin: auto;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .progress-in-numbers__item {
+      flex-basis: 30%;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      .progress-in-numbers__icon {
+        width: 100%;
+      }
+
+      .progress-in-numbers__description {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+        color: $color_solutions-industries-title;
+        margin-bottom: 0;
+        margin-top: 10px;
+        text-align: center;
+        .progress-in-numbers__important {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .circle {
+    width: 128px;
+    height: 128px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    canvas {
+      vertical-align: middle;
+    }
+  }
+  .progress-in-numbers__item {
+    .progressbar {
+      width: 128px;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      .progressbar__ico {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        background-image: none;
+        transition-delay: 2s;
+        &__img {
+          transition-delay: 2s;
+          transition: all 0.3s ease;
+        }
+      }
+      &.active {
+        transition-delay: 2s;
+        .progressbar__ico__img {
+          background-repeat: no-repeat;
+          background-position: center;
+          transition-delay: 1s;
+        }
+      }
+    }
+    &:first-child {
+      .progressbar {
+        &.active {
+          .progressbar__ico__img {
+            background-image: url('../img/progressbar__ico-1.png');
+          }
+        }
+        .progressbar__ico__img {
+          background-image: url('../img/progressbar__ico-1-notactive.png');
+          width: 64px;
+          height: 54px;
+        }
+      }
+    }
+    &:nth-child(2) {
+      .progressbar {
+        &.active {
+          .progressbar__ico__img {
+            background-image: url('../img/progressbar__ico-2.png');
+          }
+        }
+        .progressbar__ico__img {
+          background-image: url('../img/progressbar__ico-2-notactive.png');
+          width: 64px;
+          height: 64px;
+        }
+      }
+    }
+    &:nth-child(3) {
+      .progressbar {
+        &.active {
+          .progressbar__ico__img {
+            background-image: url('../img/progressbar__ico-3.png');
+          }
+        }
+        .progressbar__ico__img {
+          background-image: url('../img/progressbar__ico-3-notactive.png');
+          width: 64px;
+          height: 60px;
+        }
+      }
+    }
+    &:nth-child(4) {
+      .progressbar {
+        &.active {
+          .progressbar__ico__img {
+            background-image: url('../img/progressbar__ico-4.png');
+          }
+        }
+        .progressbar__ico__img {
+          background-image: url('../img/progressbar__ico-4-notactive.png');
+          width: 64px;
+          height: 64px;
+        }
+      }
+    }
+    &:nth-child(5) {
+      .progressbar {
+        &.active {
+          .progressbar__ico__img {
+            background-image: url('../img/progressbar__ico-5.png');
+          }
+        }
+        .progressbar__ico__img {
+          background-image: url('../img/progressbar__ico-5-notactive.png');
+          width: 64px;
+          height: 64px;
+        }
+      }
+    }
+    &:last-child {
+      .progressbar {
+        &.active {
+          .progressbar__ico__img {
+            background-image: url('../img/progressbar__ico-6.png');
+          }
+        }
+        .progressbar__ico__img {
+          background-image: url('../img/progressbar__ico-6-notactive.png');
+          width: 56px;
+          height: 56px;
+        }
+      }
+    }
+  }
+}
+
+@include adapt_to('wide_screen') {
+  .progress-in-numbers {
+    padding-bottom: 70px;
+    .progress-in-numbers {
+      &__list {
+        justify-content: space-between;
+        .progress-in-numbers__item {
+          flex-basis: 16%;
+          .progress-in-numbers__description {
+            font-size: 16px;
+            line-height: 28px;
+            .progress-in-numbers__important {
+              font-size: 28px;
+            }
+          }
+        }
+      }
+      &__item {
+        .progressbar {
+          width: 100%;
+        }
+      }
+    }
+    .circle {
+      width: 160px;
+      height: 160px;
+      canvas {
+        width: 160px;
+      }
+    }
+  }
+}
+
+@include adapt_to('tablet') {
+  .progress-in-numbers {
+    .progress-in-numbers {
+      &__list {
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+@include adapt_to('large-phone') {
+  .progress-in-numbers {
+    padding-bottom: 10px;
+    .progressbar {
+      width: 210px;
+      text-align: center;
+    }
+    .progress-in-numbers {
+      &__list {
+        .progress-in-numbers__item {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        .slick-prev,
+        .slick-next {
+          position: absolute;
+          display: block !important;
+          width: 19px;
+          height: 32px;
+          line-height: 0;
+          font-size: 0;
+          cursor: pointer;
+          color: transparent;
+          bottom: 16px;
+          padding: 0;
+          border: none;
+          outline: none;
+          opacity: 0.6;
+          z-index: 2;
+          top: 50px;
+          &:hover, &:focus {
+            outline: none;
+            opacity: 1;
+          }
+        }
+        .slick-prev {
+          background: url('../img/arrow-left-dark.png') no-repeat center;
+          left: 24px;
+        }
+        .slick-next {
+          background: url('../img/arrow-right-dark.png') no-repeat center;
+          right: 24px;
+        }
+      }
+    }
+  }
+}

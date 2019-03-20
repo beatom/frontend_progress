@@ -1,0 +1,36 @@
+@import "components/news/last-news";
+@import "components/news/list-news";
+@import "components/news/subscription";
+
+.main-inner {
+  display: flex;
+
+  .content-inner {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 320px);
+  }
+}
+
+@include desktop {
+
+.main-inner {
+
+  .content-inner {
+    width: calc(100% - 560px);
+  }
+}
+
+}
+
+@include tablet {
+
+  .main-inner {
+    flex-direction: column;
+
+    .content-inner {
+      width: 100%;
+    }
+  }
+
+}

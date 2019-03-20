@@ -1,0 +1,12 @@
+extends ../layout.pug
+
+block styles
+    link(rel="stylesheet" href="styles/category.min.css")
+    script(src='scripts/libs.min.js')
+    script(src='scripts/production/jquery.mCustomScrollbar.min.js')
+    script(src='scripts/category/fixed-navigation.js')
+
+block content
+    include ../components/category/navigation
+    include ../components/category/catalog-menu
+    include ../components/category/items

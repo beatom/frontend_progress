@@ -1,0 +1,73 @@
+@import "../../sizes";
+@import "../../colors";
+@import "../../screens";
+@import "../../components/index/products_section";
+
+.main {
+  overflow: hidden;
+}
+.navigation-subcategory {
+  height: 285px;
+  background: url("../img/subcategory-header.png") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 20px 55px;
+
+  .navigation-subcategory__title {
+    color: $color_navigation_color;
+    position: relative;
+    font-size: 28px;
+    line-height: normal;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .navigation-subcategory__breadcrumb {
+    color: $color_navigation_color;
+    font-size: 12px;
+    margin: 0;
+
+    .navigation-subcategory__link {
+      color: $color_navigation_color;
+    }
+  }
+}
+
+@include adapt_to("wide_screen") {
+  .navigation-subcategory {
+    height: 520px;
+    padding:45px 75px;
+    .navigation-subcategory__title {
+      font-size: 36px;
+      line-height:48px;
+      font-weight: 600;
+    }
+    .navigation-subcategory__breadcrumb {
+      font-size: 14px;
+    }
+  }
+}
+
+@include adapt_to("tablet") {
+  .navigation-subcategory {
+    height: 185px;
+    padding: $size_navigation_padding_adaptive;
+    .navigation-subcategory__title {
+      font-size: 24px;
+    }
+  }
+}
+
+@include adapt_to("phone") {
+  .navigation-subcategory {
+    height: 140px;
+    padding: $size_navigation_padding_adaptive;
+    .navigation-subcategory__title {
+      font-size: 18px;
+    }
+  }
+}

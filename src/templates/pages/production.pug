@@ -1,0 +1,14 @@
+extends ../layout.pug
+
+block styles
+    link(rel="stylesheet" href="styles/production.min.css")
+    script(src='scripts/libs.min.js')
+    script(src='scripts/production/jquery.mCustomScrollbar.min.js')
+    script(src='scripts/production/production-slider.js')
+
+block content
+    include ../components/production/navigation
+    include ../components/production/product-catalog
+    include ../components/production/why-progress
+    include ../components/production/technical-solutions-and-new-novelties
+    include ../components/production/progress-in-action

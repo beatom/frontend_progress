@@ -1,0 +1,50 @@
+@import "../../colors";
+@import "../../sizes";
+@import "../../templates";
+@import "../../screens";
+
+.solutions-wrapper {
+  background: $color_solution-wrapper__bg;
+  .content {
+    width: 90%;
+    margin: auto;
+  }
+}
+  .solutions-industries {
+    .caption {
+      display: flex;
+      align-items: center;
+      position: relative;
+      .caption__title {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 0;
+        color: $color_solutions-industries-title;
+        display: flex;
+        align-items: baseline;
+        width: 60%;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        .cation__title__accent {
+          color: $color_solutions-industries-title-accent;
+        }
+      }
+      .caption-wrapper {
+        display: flex;
+        align-items:baseline;
+        margin-bottom: 60px;
+      }
+      .caption__title__green-band {
+        width: 112px;
+        height: 4px;
+        background-color: #7a972c;
+        margin-right: 30px;
+        display: flex;
+      }
+    }
+  }
+
+
+@include adapt_to('wide_screen') {
+
+}

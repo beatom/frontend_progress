@@ -1,0 +1,17 @@
+extends ../layout.pug
+
+block styles
+    link(rel="stylesheet" href="styles/news.min.css")
+
+block content
+    include ../components/news/jumbotron
+    section.main-inner
+        include ../components/news/navigation
+        section.content-inner
+            include ../components/news/filters
+            include ../components/news/last-news
+            include ../components/news/list-news
+            include ../components/news/subscription
+
+block scripts
+    script(src="scripts/news/news.js")

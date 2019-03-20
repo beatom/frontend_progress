@@ -1,0 +1,13 @@
+extends ../layout.pug
+
+block styles
+    link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css")
+    link(rel="stylesheet" href="styles/index.min.css")
+
+block content
+    include ../components/index/jumbotron_section
+    include ../components/index/products_section
+    include ../components/index/solutions_section
+
+block scripts
+    script(src="scripts/main/main.js")

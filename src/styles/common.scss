@@ -1,0 +1,135 @@
+@import "./colors.scss";
+@import "./templates.scss";
+@import "components/common/aside";
+@import "components/common/navigation-menu";
+@import "components/common/navigation-inner";
+@import "components/common/filters";
+@import "components/common/jumbotron";
+@import "components/common/header";
+@import "components/common/footer";
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.page {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  overflow-x: hidden;
+  @include headerGradient();
+  @include footerGradient();
+
+  .main {
+    padding-left: $size_aside_width_laptop;
+    width: 100%;
+  }
+}
+
+.main-inner {
+  display: flex;
+
+  .content-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 320px);
+
+    &_when-nav-fixed {
+      margin-left: $size_header_logo_container_width;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  top: $size_header_height_laptop;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10;
+  cursor: pointer;
+  @include simpleTransitionLong;
+
+  &_active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@include desktop {
+
+  .page {
+    .main {
+      padding-left: $size_aside_width_desktop;
+    }
+  }
+
+  .main-inner {
+    .content-inner {
+      width: calc(100% - 560px);
+
+      &_when-nav-fixed {
+        margin-left: $size_header_logo_container_width_desktop;
+      }
+    }
+  }
+
+  .overlay {
+    top: $size_header_height_desktop;
+  }
+
+}
+
+@include tablet {
+
+  .page {
+    .main {
+      padding-left: 0;
+    }
+  }
+
+  .overlay {
+    left: 0;
+  }
+
+  .main-inner {
+    flex-direction: column;
+    padding-top: 55px;
+
+    .content-inner {
+      z-index: 8;
+      width: 100%;
+
+      &_when-nav-fixed {
+        margin-left: 0;
+      }
+    }
+  }
+
+}
+
+@include mobile {
+
+  .main-inner {
+    padding-top: 45px;
+  }
+
+}

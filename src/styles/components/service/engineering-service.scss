@@ -1,0 +1,251 @@
+@import "../../templates";
+
+.engineering-service {
+  padding: 50px;
+  background-color: #f7f7f7;
+
+  .engineering-service__title-block {
+    .engineering-service__title {
+      position: relative;
+      margin-top: 0;
+      margin-bottom: 10px;
+      padding-left: 140px;
+      font-size: 32px;
+      line-height: 40px;
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        content: "";
+        width: 110px;
+        height: 4px;
+        background-color: #7a972c;
+      }
+
+      span {
+        margin-left: 1%;
+        color: #fdba1a;
+      }
+    }
+
+    .engineering-service__description {
+      padding-left: 140px;
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      font-style: italic;
+    }
+  }
+
+  .engineering-service__points {
+    margin-bottom: 60px;
+    .engineering-service__point {
+      margin-bottom: 12px;
+
+      .engineering-service__point-title-block {
+        .engineering-service__point-nubmer {
+          display: inline-block;
+          margin-right: 6px;
+          font-size: 20px;
+          font-weight: bold;
+          line-height: 28px;
+          color: #7a972c;
+        }
+
+        .engineering-service__point-title {
+          display: inline-block;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 28px;
+        }
+      }
+
+      .engineering-service__point-text {
+        margin: 0;
+        font-size: 14px;
+        line-height: 20px;
+        color: #232323;
+      }
+    }
+  }
+
+  .engineering-service__bordered-text {
+    margin: 0;
+    padding: 30px 65px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    border: 4px solid #fdba1a;
+  }
+}
+
+@include desktop {
+
+  .engineering-service {
+    padding: 80px 160px 80px 160px;
+
+    .engineering-service__title-block {
+      margin-bottom: 48px;
+
+      .engineering-service__title {
+        width: 100%;
+        font-size: 48px;
+        line-height: 60px;
+      }
+
+      .engineering-service__description {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+
+    .engineering-service__points {
+      display: inline-block;
+      width: 45%;
+
+      .engineering-service__point {
+        .engineering-service__point-title-block {
+          .engineering-service__point-nubmer {
+            width: 7%;
+            font-size: 28px;
+            line-height: 36px;
+            vertical-align: top;
+            margin-top: 28px;
+          }
+
+          .engineering-service__point-title {
+            width: 90%;
+            display: inline-block;
+            font-size: 28px;
+            line-height: 36px;
+          }
+        }
+
+        .engineering-service__point-text {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    .engineering-service__bordered-text {
+      display: inline-block;
+      width: 45%;
+      float: right;
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+}
+
+@include tablet {
+
+  .engineering-service {
+    padding: 17px;
+    padding-bottom: 34px;
+
+    .engineering-service__title-block {
+      .engineering-service__title {
+        margin-bottom: 0;
+        font-size: 24px;
+        line-height: 32px;
+
+        &:before {
+          height: 2px;
+        }
+
+        span {
+          color: #232323;
+        }
+      }
+    }
+
+    .engineering-service__points {
+      margin-bottom: 30px;
+
+      .engineering-service__point {
+        .engineering-service__point-title-block {
+          .engineering-service__point-nubmer {
+            font-size: 16px;
+            line-height: 28px;
+          }
+
+          .engineering-service__point-title {
+            font-size: 16px;
+            line-height: 28px;
+          }
+        }
+
+        .engineering-service__point-text {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    .engineering-service__bordered-text {
+      padding: 20px 30px;
+    }
+  }
+
+}
+
+@include mobile {
+
+  .engineering-service {
+
+    .engineering-service__title-block {
+      .engineering-service__title {
+        padding-left: 70px;
+        font-size: 16px;
+        line-height: 24px;
+
+        &:before {
+          width: 50px;
+        }
+      }
+
+      .engineering-service__description {
+        padding-left: 70px;
+        font-size: 13px;
+        line-height: 16px;
+      }
+    }
+
+    .engineering-service__points {
+      .engineering-service__point {
+        .engineering-service__point-title-block {
+          .engineering-service__point-nubmer {
+            margin-top: 14px;
+            width: 7%;
+            font-size: 14px;
+            line-height: 20px;
+            vertical-align: top;
+          }
+
+          .engineering-service__point-title {
+            width: 85%;
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+
+        .engineering-service__point-text {
+          font-size: 13px;
+          line-height: 16px;
+        }
+      }
+    }
+
+    .engineering-service__bordered-text {
+      padding: 17px;
+      font-size: 14px;
+      line-height: 20px;
+      border: 2px solid #fdba1a;
+    }
+  }
+
+}

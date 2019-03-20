@@ -1,0 +1,243 @@
+@import "../../colors";
+@import "../../templates";
+@import "../../sizes";
+
+.header {
+  position: fixed;
+  display: flex;
+  background: $color_header_background;
+  z-index: 11;
+  width: 100%;
+  height: $size_header_height_laptop;
+
+  .header__container-logo {
+    height: 100%;
+    width: $size_header_logo_container_width;
+    background: $color_header_logo_background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .header__logo {
+      width: $size_header_logo_width;
+    }
+  }
+
+  .choice-town {
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    width: $size_header_choicetown_width;
+    font-size: 14px;
+
+    &:after {
+      position: absolute;
+      top: 52%;
+      right: 7px;
+      transform: translateY(-50%);
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: url("../img/icon_arrow-dropdown.svg") no-repeat center center;
+    }
+
+    .choice-town__current-value {
+      padding-right: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .choice-town__list {
+      visibility: hidden;
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+      transform: translateY(100%);
+      background: $color_header_background;
+      list-style-type: none;
+      box-sizing: border-box;
+      width: 100%;
+      padding: $size_header_choice_town_list_padding;
+      padding-left: 15px;
+
+      .choice-town__item {
+        padding: $size_header_choice_town_item_padding;
+
+        &:hover {
+          color: $color_header_choice_town_item_color_hover;
+        }
+      }
+    }
+
+    &_active {
+      &:after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      .choice-town__current-value {
+        background: $color_header_background;
+      }
+
+      .choice-town__list {
+        visibility: visible;
+      }
+    }
+
+  }
+
+  .header__phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $size_header_phone_width;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .choice-language {
+    width: 100px;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 120px;
+    transform: translateY(-50%);
+
+    .choice-language__item {
+      box-sizing: border-box;
+      justify-content: center;
+      max-height: 23px;
+      align-items: center;
+      cursor: pointer;
+
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+
+      &:hover {
+        border-bottom: 1px solid #000;
+      }
+
+      &_active {
+        color: #999999;
+
+        &:hover {
+          border-bottom: 1px solid #999999;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+  .header {
+    .choice-town {
+      margin-right: 4%;
+      width: 240px;
+
+      .choice-town__list {
+        padding-left: 55px;
+      }
+    }
+  }
+
+}
+
+@include desktop {
+
+  .header {
+    height: $size_header_height_desktop;
+
+    .header__container-logo {
+      width: $size_header_logo_container_width_desktop;
+
+      .header__logo {
+        width: $size_header_logo_width_desktop;
+      }
+    }
+
+    .choice-town {
+      width: $size_header_choicetown_width_desktop;
+      font-size: 20px;
+      font-weight: 400;
+
+      &:after {
+        right: 57px;
+      }
+
+      .choice-town__list {
+        padding-left: 70px;
+
+        .choice-town__item {
+          padding: $size_header_choice_town_item_padding_desktop;
+        }
+      }
+    }
+
+    .header__phone {
+      width: $size_header_phone_width_desktop;
+    }
+
+    .choice-language {
+      right: 190px;
+
+      .choice-language__item {
+        &:not(:first-child) {
+          margin-left: 25px;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: 860px) {
+  .header {
+    .choice-language {
+      display: none;
+    }
+  }
+}
+
+@include tablet {
+
+  .header {
+    height: $size_header_height_tablet;
+
+    .header__container-logo {
+      width: $size_header_logo_container_width_tablet;
+
+      .header__logo {
+        width: $size_header_logo_width_tablet;
+      }
+    }
+
+    .choice-town,
+    .header__phone,
+    .choice-language {
+      display: none;
+    }
+
+  }
+
+}
+
+@include mobile {
+
+  .header {
+    height: $size_header_height_mobile;
+
+    .header__container-logo {
+      width: $size_header_logo_container_width_mobile;
+
+      .header__logo {
+        width: $size_header_logo_width_mobile;
+      }
+    }
+  }
+
+}

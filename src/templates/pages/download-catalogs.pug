@@ -1,0 +1,16 @@
+extends ../layout.pug
+
+block styles
+    link(rel="stylesheet" href="styles/download-catalogs.min.css")
+
+block content
+    include ../components/download/jumbotron
+    section.main-inner
+        include ../components/download/navigation
+        section.content-inner.content-inner_download
+            include ../components/download/filters
+            include ../components/download/content-catalogs
+
+block scripts
+    script(src="scripts/download/download.js")
+

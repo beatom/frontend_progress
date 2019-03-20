@@ -1,0 +1,173 @@
+@import "../../colors";
+@import "../../sizes";
+@import "../../templates";
+@import "../../screens";
+
+.manufacturing {
+  background: url("../img/manufacturing-bg.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  &__caption {
+    padding: 0 55px;
+    position: relative;
+    &-wrapper {
+      display: flex;
+      margin-top: 45px;
+      margin-bottom: 25px;
+    }
+    &__title {
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 700;
+      color: $color_category-items_links_item_position;
+      margin: 0;
+      width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      &__green-band {
+        width: 112px;
+        height: 4px;
+        background: $color_products_item_color-hover;
+        margin-right: 30px;
+        margin-top: 20px;
+      }
+    }
+    &__accent {
+      color: $color_solutions-industries-title-accent;
+    }
+  }
+  &__info {
+    background: $color_solution_section_item_background;
+    padding: 120px 30px 90px;
+    width: 50%;
+    max-width: 465px;
+    margin-bottom: 55px;
+    display: flex;
+    flex-direction: column;
+    &__description {
+      font-size: 14px;
+      left: 20px;
+      color: $color_solutions-industries-title;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+    &__link {
+      text-transform: uppercase;
+      color: $color_category-items-button-color;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 11px 80px;
+      background: $color_solutions-industries-title-accent;
+      border: 2px solid $color_solutions-industries-title-accent;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      &:hover {
+        color: $color_category-items-button_hover;
+        background: $color_category-items-button-color;
+      }
+      &--wrapper {
+        display: flex;
+      }
+    }
+  }
+}
+
+@include adapt_to('wide_screen') {
+  .manufacturing {
+    &__caption {
+      &-wrapper {
+        padding:0 160px;
+        margin-top: 70px;
+        margin-bottom: 85px;
+      }
+      &__title {
+        font-size: 48px;
+        line-height: 60px;
+        &__green-band {
+          width: 160px;
+          margin-right: 80px;
+        }
+      }
+    }
+    &__info {
+      max-width: 880px;
+      padding:100px 160px 90px;
+      margin-bottom: 140px;
+      &__description {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 35px;
+      }
+      &__link {
+        font-size: 16px;
+        padding: 17px 70px;
+        border-radius: 50px;
+      }
+    }
+  }
+}
+
+@include adapt_to("tablet") {
+  .manufacturing {
+    padding: 0 15px;
+    &__caption {
+      padding: 0;
+      &-wrapper {
+        margin-top: 25px;
+      }
+      &__title {
+        font-size: 24px;
+        line-height: 32px;
+        &__green-band {
+          width: 128px;
+          height: 2px;
+        }
+      }
+    }
+    &__info {
+      width: 100%;
+      max-width: 100%;
+      padding: 20px 15px;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@include adapt_to('phone') {
+  .manufacturing {
+    &__caption {
+      &-wrapper {
+        margin-top: 20px;
+      }
+      &__title {
+        font-size: 16px;
+        line-height: 24px;
+        &__green-band {
+          width: 48px;
+          margin-right: 15px;
+        }
+      }
+    }
+    &__info {
+      margin-bottom: 25px;
+      &__description {
+        font-size: 13px;
+        line-height: 16px;
+      }
+      &__link {
+        padding: 9px 80px;
+        width: 100%;
+      }
+    }
+  }
+}

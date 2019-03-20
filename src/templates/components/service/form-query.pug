@@ -1,0 +1,24 @@
+section.form-query
+    h2.form-query__title Отправить запрос в службу сервиса
+    p.form-query__text
+        | Если у вас появились вопросы относительно службы Сервиса В Прогрессе или есть текущая потребность на выезд
+        | специалистов для замера, соединения или подбора комплектующих, Вы можете направить свой вопрос через форму.
+        | Для максимально скорого и полного ответа обязательно укажите контактный телефон для связи и суть вопроса.
+
+    form.form-query__form
+        input.form-query__form-name(type="text" placeholder="Представьтесь, пожалуйста")
+        input.form-query__form-file(name="file" id="file" type="file")
+        label.form-query__form-file-label(for="file")
+            span.form-query__form-file-label-text Файл не прикреплен
+        div.form-query__form-file-delete
+        input.form-query__form-tel(type="text" placeholder="Телефон для связи")
+        textarea.form-query__form-comment(placeholder="Комментарий к запросу")
+        select.form-query__form-category(id="category")
+            option(value="hide") О чем вы хотите узнать
+            option(value="1") О продукции, ценах и сроках доставки
+            option(value="2") О стратегии, планах и целях
+            option(value="3") О цифрах, предложениях и словах
+            option(value="4") О производстве и руководстве
+            option(value="5") О менеджменте и управлении
+            option(value="6") О мотивации и стимуляции
+        input.form-query__form-submit(type="submit" value="Отправить")

@@ -1,0 +1,18 @@
+section.subscription
+    .content
+        h3.subscription__title Шагай в ногу с Прогрессом!
+        p.subscription__description Подпишитесь на нашу рассылку и будьте в курсе всех технических новинок
+            |и специальных предложений от Прогресса
+    .subscription__form
+        form(method='POST' action='').subscription__form--wrapper
+            .subscription__form-group--conteiner
+                div.subscription__form-group
+                    input.subscription__form-group--control(type='text', placeholder='Представьтесь, пожалуйста' name='name')
+                div.subscription__form-group
+                    input.subscription__form-group--control(type='email', placeholder='E-mail' name='email')
+
+            .subscription__form-group--conteiner
+                div.subscription__form-group
+                    textarea.subscription__form-group--control.subscription__form-group--control__textarea(name='', placeholder='Название компании')
+            .subscription__form-group--conteiner
+                button.subscription__form-group__send(type='submit') Подписаться на рассылку

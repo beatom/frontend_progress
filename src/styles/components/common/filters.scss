@@ -1,0 +1,133 @@
+@import "../../colors";
+@import "../../sizes";
+@import "../../fonts";
+@import "../../templates";
+
+.filters {
+  order: 1;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 16px 30px;
+  width: 100%;
+
+  .filters__filter {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 16px;
+    cursor: pointer;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    border: 1px solid #e8e8eb;
+
+    &.opened {
+      .filters__icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    .filters__options {
+      display: none;
+    }
+
+    .filters__icon {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      width: 20px;
+      height: 40px;
+      background: url("../img/ic_expand_more_black_24px.svg") no-repeat center center;
+      transition: all .3 ease;
+    }
+
+    .filters__options {
+      z-index: 9;
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      top: 100%;
+      width: calc(100% + 2px);
+      left: -1px;
+      list-style: none;
+      border: 1px solid #e8e8eb;
+
+      .filters__option {
+        padding-left: 16px;
+        cursor: pointer;
+        background-color: #fff;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid #e8e8eb;
+        }
+
+        &:hover {
+          background-color: #eaeff2;
+        }
+
+        &_active {
+          background-color: #eaeff2;
+        }
+      }
+
+      &_active {
+        display: block;
+      }
+    }
+  }
+}
+
+@include desktop {
+
+  .filters {
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 720px;
+
+    .filters__filter {
+      height: 44px;
+      font-size: 16px;
+
+      .filters__options {
+        .filters__option {
+          height: 44px;
+        }
+      }
+    }
+  }
+
+}
+
+@include tablet {
+
+  .news-filters {
+    padding: 17px;
+  }
+
+  .filters {
+    padding: 17px;
+  }
+
+}
+
+@include mobile {
+
+  .filters {
+    .filters__filter {
+      font-size: 13px;
+    }
+  }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+  .content-inner_download {
+    .filters {
+      margin-left: auto;
+      margin-right: auto;
+      width: 608px;
+    }
+  }
+
+}

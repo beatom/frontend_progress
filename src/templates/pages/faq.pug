@@ -1,0 +1,16 @@
+extends ../layout.pug
+
+block styles
+    link(rel="stylesheet" href="styles/faq.min.css")
+
+
+block content
+    include ../components/faq/navigation
+    section.main-inner
+        include ../components/faq/questions
+        section.faq-inner
+            include ../components/faq/answers
+
+block scripts
+    script(src='scripts/production/jquery.mCustomScrollbar.min.js')
+    script(src='scripts/faq/faq-script.js')

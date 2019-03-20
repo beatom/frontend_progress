@@ -1,0 +1,43 @@
+section.question
+    h2.question__title Задать&#160;
+        span.question__title--accent вопрос
+    .question__form
+        form(method='POST' action='').question__form--wrapper
+            .question__form-group--conteiner
+                div.question__form-group
+                    input.question__form-group--control(type='text', placeholder='Представьтесь, пожалуйста' name='name')
+                div.question__form-group
+                    input.question__form-group--control(type='text', placeholder='Телефон для связи' name='phone')
+                div.question__form-group
+                    input.question__form-group--control(type='email', placeholder='E-mail' name='email')
+                div.question__form-group
+                    input.question__form-group--control(type='text', placeholder='Название вашей компании' name='companyName')
+
+            .question__form-group--conteiner
+                div.question__form-group
+                    .solutions-filter__nav
+                        .solutions-filter__nav__list__link__top.category.solutions-filter__nav__list__link__top__placeholder.question__form-group--control
+                            span.solutions-filter__nav__list__link--result О чем вы хотите узнать
+                            svg.solutions-filter__nav__icon(viewBox="0 0 20 20" width="20" height="20")
+                                path(d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z")
+                        ul.solutions-filter__nav__list
+                            li.active
+                                span.solutions-filter__nav__list__link О продукции, ценах и сроках доставки 1
+                            li
+                                span.solutions-filter__nav__list__link О продукции, ценах и сроках доставки 2
+                            li
+                                span.solutions-filter__nav__list__link О продукции, ценах и сроках доставки 3
+                            li
+                                span.solutions-filter__nav__list__link О продукции, ценах и сроках доставки 4
+                            li
+                                span.solutions-filter__nav__list__link О продукции, ценах и сроках доставки 5
+                div.question__form-group
+                    input(type='file', name='file')#file.input-file
+                    label(for="file").js-labelFile.question__form-group--control
+                        span.icon
+                        span.js-fileName Файл не прикреплен
+                        span.delete-file
+                div.question__form-group
+                    textarea.question__form-group--control.question__form-group--control__textarea(name='', placeholder='Комментарий к запросу')
+            .question__form-group--conteiner
+                button.question__form-group__send(type='submit') Отправить

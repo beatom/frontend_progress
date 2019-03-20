@@ -1,0 +1,123 @@
+@import "../../colors";
+@import "../../sizes";
+@import "../../fonts";
+@import "../../templates";
+
+.jumbotron {
+  position: relative;
+  height: 285px;
+
+  .jumbotron__nav {
+    position: absolute;
+    left: 55px;
+    bottom: 25px;
+    color: #fff;
+
+    .jumbotron__nav-title {
+      font-size: 28px;
+      line-height: 36px;
+      font-weight: 600;
+    }
+
+    .jumbotron__nav-breadcrumbs {
+      margin: 0;
+      margin-top: 8px;
+      padding: 0;
+      list-style: none;
+
+      .jumbotron__nav-item {
+        margin-right: 5px;
+        display: inline-block;
+        font-size: 12px;
+        line-height: 28px;
+
+        &:hover {
+          a {
+            text-decoration: none;
+          }
+        }
+
+        a {
+          margin-right: 5px;
+          color: #fff;
+        }
+
+        &:last-child {
+          .jumbotron__nav-item-pointer {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+
+  .jumbotron {
+    height: 520px;
+
+    .jumbotron__nav {
+      left: 80px;
+      bottom: 45px;
+
+      .jumbotron__nav-title {
+        font-size: 36px;
+        line-height: 48px;
+      }
+
+      .jumbotron__nav-breadcrumbs {
+        margin-top: 16px;
+
+        .jumbotron__nav-item {
+          font-size: 14px;
+        }
+
+      }
+
+    }
+  }
+
+}
+
+@include tablet {
+
+  .jumbotron {
+    height: 185px;
+
+    .jumbotron__nav  {
+      left: 17px;
+      bottom: 17px;
+
+      .jumbotron__nav-title {
+        font-size: 24px;
+        line-height: 36px;
+      }
+
+      .jumbotron__nav-breadcrumbs {
+
+        .jumbotron__nav-item {
+          font-size: 12px;
+        }
+
+      }
+    }
+  }
+
+}
+
+@include mobile {
+
+  .jumbotron {
+    height: 140px;
+
+    .jumbotron__nav  {
+      bottom: 8px;
+
+      .jumbotron__nav-title {
+        font-size: 18px;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,369 @@
+@import "../../templates";
+
+.download-content {
+  order: 2;
+  padding: 16px 30px;
+
+  .download-content__block {
+    margin-bottom: 45px;
+
+    &:not(:first-child) {
+      padding-top: 20px;
+      border-top: 2px solid #e8e8eb;
+    }
+
+    .download-content__block-title {
+      position: relative;
+      margin-top: 0;
+      padding-left: 150px;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 36px;
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        content: "";
+        width: 110px;
+        height: 4px;
+        background-color: #7a972c;
+
+      }
+    }
+
+    .download-content__items-block {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .download-content__item {
+        margin-bottom: 25px;
+        flex-basis: 33%;
+        text-align: center;
+
+        .download-content__item-image_catalog {
+          margin: 0 auto;
+          margin-bottom: 10px;
+          width: 130px;
+          height: 170px;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+
+          .download-content__item-popup {
+            display: flex;
+            opacity: 0;
+            visibility: hidden;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            @include simpleTransitionLong;
+
+            a {
+              z-index: 3;
+              display: flex;
+              flex-direction: column;
+              cursor: pointer;
+              text-decoration: none;
+
+              &:hover {
+                svg {
+                  fill: #7a972c;
+                }
+
+                .download-content__popup-text {
+                  color: #7a972c;
+                }
+              }
+            }
+
+            svg {
+              margin: 0 auto;
+              transition: 200ms;
+              transition-timing-function: ease-in-out;
+              -webkit-transition: 200ms;
+              -webkit-transition-timing-function: ease-in-out;
+            }
+
+            .download-content__popup-text {
+              color: #fff;
+              transition: 200ms;
+              transition-timing-function: ease-in-out;
+              -webkit-transition: 200ms;
+              -webkit-transition-timing-function: ease-in-out;
+            }
+
+          }
+
+          &:hover {
+            .download-content__item-popup {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+
+        .download-content__item-description {
+          font-size: 14px;
+          line-height: 20px;
+
+          .download-content__item-description-link {
+            display: none;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  &.download-content_catalogs {
+    .download-content__block {
+      .download-content__items-block {
+        .download-content__item {
+          flex-basis: 50%;
+        }
+      }
+    }
+  }
+
+}
+
+@include desktop {
+
+  .download-content {
+    margin-top: 80px;
+    padding: 0;
+    width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .download-content__block {
+      .download-content__block-title {
+        font-size: 32px;
+        line-height: 48px;
+      }
+
+      .download-content__items-block {
+        .download-content__item {
+
+          .download-content__item-image_catalog {
+            width: 163px;
+            height: 213px;
+          }
+
+          .download-content__item-description {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+
+    &.download-content_catalogs {
+      .download-content__block {
+        .download-content__items-block {
+          .download-content__item {
+            flex-basis: 33%;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// @media (max-width: 1024px) {
+
+//   .download-content {
+//     .download-content__block {
+//       .download-content__block-title {
+//         margin-bottom: 60px;
+//         padding-left: 0;
+
+//         &:before {
+//           top: auto;
+//           transform: translateY(0);
+//           bottom: -24px;
+//         }
+//       }
+//     }
+//   }
+
+// }
+
+@include tablet {
+
+  .download-content {
+    padding: 17px;
+
+    .download-content__block {
+      margin-bottom: 0;
+
+      .download-content__block-title {
+        margin-bottom: 40px;
+        padding-left: 140px;
+        font-size: 18px;
+        line-height: 30px;
+
+        &:before {
+          top: 50%;
+          transform: translateY(-50%);
+          bottom: auto;
+          height: 2px;
+        }
+      }
+
+      .download-content__items-block {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .download-content__item {
+          flex-basis: 100%;
+          display: flex;
+          flex-direction: row;
+          padding-bottom: 17px;
+          margin-bottom: 17px;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid #c5c5c5;
+          }
+
+          .download-content__item-image {
+            margin: 0;
+            margin-right: 17px;
+          }
+
+          .download-content__item-image_catalog:hover {
+            .download-content__item-popup {
+              display: none;
+            }
+          }
+
+          .download-content__item-description {
+            padding-top: 10px;
+            display: block;
+
+            .download-content__item-description-text {
+              display: block;
+              margin-bottom: 15px;
+              font-size: 16px;
+              font-weight: 600;
+              line-height: 24px;
+              text-align: left;
+            }
+
+            .download-content__item-description-link {
+              position: relative;
+              display: block;
+              cursor: pointer;
+              padding-left: 30px;
+              width: 240px;
+              height: 40px;
+              font-size: 14px;
+              line-height: 36px;
+              color: #2d607c;
+              text-align: center;
+              text-transform: uppercase;
+              text-decoration: none;
+              border: 2px solid #fdba1a;
+              border-radius: 20px;
+
+              &:before {
+                position: absolute;
+                left: 65px;
+                content: "";
+                width: 36px;
+                height: 36px;
+                background: url("../img/icon_download-service.svg") no-repeat center center;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.download-content_catalogs {
+      .download-content__block {
+        .download-content__items-block {
+          .download-content__item {
+            flex-basis: 100%;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@include mobile {
+
+  .download-content {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .download-content__block {
+      margin-bottom: 0;
+
+      .download-content__block-title {
+        margin-bottom: 20px;
+        padding-left: 80px;
+        font-size: 16px;
+        line-height: 24px;
+
+        &:before {
+          width: 50px;
+        }
+      }
+
+      .download-content__items-block {
+        .download-content__item {
+          padding-bottom: 20px;
+          flex-direction: column;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid #e5e5e5;
+          }
+
+          .download-content__item-image {
+            margin-right: 0;
+          }
+
+          .download-content__item-description {
+            .download-content__item-description-text {
+              font-weight: 400;
+              text-align: left;
+            }
+
+            .download-content__item-description-link {
+              padding-left: 8%;
+              width: 100%;
+
+              &:before {
+                left: 30%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+  .content-inner_download {
+    .download-content {
+      margin-left: auto;
+      margin-right: auto;
+      width: 608px;
+    }
+  }
+
+}

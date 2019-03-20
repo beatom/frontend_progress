@@ -1,0 +1,21 @@
+extends ../layout.pug
+
+block styles
+    link(rel="stylesheet" href="styles/subcategory.min.css")
+    script(src='scripts/libs.min.js')
+    script(src='scripts/production/jquery.mCustomScrollbar.min.js')
+    script(src='scripts/subcategory/subcategory-sliders.js')
+    script(src='scripts/production/production-slider.js')
+
+block content
+    include ../components/subcategory/navigation
+    include ../components/subcategory/about-manufacturer
+    include ../components/subcategory/image-slider
+    include ../components/subcategory/range
+    include ../components/subcategory/design
+    include ../components/subcategory/advantages
+    include ../components/subcategory/manufacturing-capabilities
+    include ../components/subcategory/service
+    include ../components/production/technical-solutions-and-new-novelties
+    include ../components/production/progress-in-action
+    include ../components/subcategory/more

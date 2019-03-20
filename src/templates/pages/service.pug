@@ -1,0 +1,17 @@
+extends ../layout.pug
+
+block styles
+    link(rel="stylesheet" href="styles/service.min.css")
+    link(rel="stylesheet" href="styles/scrollbar.min.css")
+
+block content
+    include ../components/service/jumbotron
+    include ../components/service/engineering-service
+    include ../components/service/engineering-service_slider
+    include ../components/service/logistics
+    include ../components/service/quality-control
+    include ../components/service/form-query
+
+block scripts
+    script(src='scripts/service/service.js')
+    script(src='scripts/production/jquery.mCustomScrollbar.min.js')
